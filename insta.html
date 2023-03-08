@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>insta</title>
+    <style>
+        body {
+            display: flex;
+            font-family: monospace;
+            background-color: grey;
+        }
+
+        .box {
+            margin: 4rem auto;
+            width: 10rem;
+            height: 12rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: whitesmoke;
+            border-radius: 1rem;
+        }
+
+        img {
+            width: 5rem;
+            border-radius: 100%;
+        }
+
+        .name {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        button {
+            cursor: pointer;
+            padding: .4rem 1rem;
+            background-color: rgb(95, 95, 252);
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        span {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <img src="dog1.jpg" alt="doggu-bhau">
+        <h3 class="name">Sunder Bhau</h3>
+        <button type="button" id="follow-btn">Follow</button>
+    </div>
+
+    <div class="box">
+        <img src="dog2.jpg" alt="doggu-bhau">
+        <h3 class="name">norbhaay</h3>
+        <button type="button" id="follow-btn1">Follow</button>
+    </div>
+
+    <div class="box">
+        <img src="dog3.jpg" alt="doggu-bhau">
+        <h3 class="name">Profile(Me)</h3>
+        <span id="follower">Followers </span>
+        <span id="number"></span>
+    </div>
+
+    <script>
+
+        let follow = 0;
+        let followBtn = document.getElementById("follow-btn");
+        let followBtn1 = document.getElementById("follow-btn1");
+        let follower = document.getElementById("number");
+
+        follower.textContent = follow;
+
+        followBtn.addEventListener("click", () => {
+            if (followBtn.textContent != "Following") {
+                followBtn.textContent = "Following";
+                follow += 1;
+                follower.textContent = follow;
+            }
+            else {
+                followBtn.textContent = "Follow";
+                follow -= 1;
+                follower.textContent = follow;
+            }
+        });
+
+        followBtn1.addEventListener("click", () => {
+            if (followBtn1.textContent != "Following") {
+                followBtn1.textContent = "Following";
+                follow += 1;
+                follower.textContent = follow;
+            }
+            else {
+                followBtn1.textContent = "Follow";
+                follow -= 1;
+                follower.textContent = follow;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
